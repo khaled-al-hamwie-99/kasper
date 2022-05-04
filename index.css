@@ -75,9 +75,80 @@ select {
     display: flex;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    /* added line */
+    border: 0;
+}
+
 /* ############## */
 /* Compontents    */
 /* ############## */
+@media (max-width:50rem) {
+    #primary-navigation {
+        z-index: 10;
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-block-start: 6rem;
+        top: -20px;
+        right: 0;
+        height: 110vh;
+        width: 60%;
+        border-radius: 2px;
+        background-color: gray;
+        transform: translateX(100%);
+        transition: transform 600ms ease-in-out 0.1ms;
+    }
+
+    #primary-navigation[data-visible="true"] {
+        transform: translateX(0);
+    }
+
+    .mobile-nav-toggle-parent {
+        align-self: flex-start;
+        width: max(5%, 3rem);
+        height: 100%;
+    }
+
+    .mobile-nav-toggle[aria-checked="false"] {
+        display: block;
+        width: 1.875rem;
+        height: 0.3125rem;
+        background-color: black;
+        border-radius: 1.25rem;
+        transform: translateY(0.3125rem);
+        box-shadow: 0 0.625rem 0 0 black, 0 1.25rem black;
+    }
+
+    .mobile-nav-toggle[aria-checked="true"] {
+        z-index: 11;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 1.875rem;
+        height: 0.3125rem;
+        background-color: black;
+    }
+}
+
+@media (min-width:50.00001rem) {
+    .mobile-nav-toggle-parent {
+        display: none;
+    }
+
+    .mobile-nav-toggle[aria-checked="false"] {
+        display: none;
+    }
+}
 
 .primary-nav {
     justify-content: space-between;
@@ -97,6 +168,7 @@ select {
 .logo--primary-nav {
     width: max(10%, 8.125rem);
     max-height: 100%;
+    transform: scale(1.1);
     align-self: flex-start;
 }
 
@@ -129,7 +201,8 @@ select {
     color: black;
 }
 
-.header--primary-nav ul li a:hover {
+.header--primary-nav ul li a:hover,
+.header--primary-nav ul li a:active {
     color: #1FACFA;
 }
 
