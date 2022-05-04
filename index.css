@@ -33,6 +33,12 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    position: relative;
+}
+
+html,
+body {
+    overflow-x: hidden;
 }
 
 a:not([class]) {
@@ -88,14 +94,17 @@ select {
     border: 0;
 }
 
-/* ############## */
-/* Compontents    */
-/* ############## */
+/* ################### */
+/* the page classes    */
+/* ################### */
+
+/* the nav */
 @media (max-width:50rem) {
     #primary-navigation {
         z-index: 10;
         position: absolute;
         display: none;
+        overflow: hidden;
         flex-direction: column;
         justify-content: flex-start;
         padding-block-start: 6rem;
@@ -104,13 +113,13 @@ select {
         height: 110vh;
         width: 60%;
         border-radius: 2px;
-        background-color: gray;
+        background-color: black;
         transform: translateX(100%);
         transition: transform 600ms ease-in-out 0.1ms;
     }
 
     #primary-navigation[data-visible="true"] {
-        transform: translateX(0);
+        transform: translateX(2%);
     }
 
     .mobile-nav-toggle-parent {
@@ -123,10 +132,11 @@ select {
         display: block;
         width: 1.875rem;
         height: 0.3125rem;
-        background-color: black;
+        background-color: white;
+        border: 0;
         border-radius: 1.25rem;
         transform: translateY(0.3125rem);
-        box-shadow: 0 0.625rem 0 0 black, 0 1.25rem black;
+        box-shadow: 0 0.625rem 0 0 white, 0 1.25rem white;
     }
 
     .mobile-nav-toggle[aria-checked="true"] {
@@ -136,7 +146,7 @@ select {
         right: 20px;
         width: 1.875rem;
         height: 0.3125rem;
-        background-color: black;
+        background-color: white;
     }
 }
 
@@ -151,24 +161,29 @@ select {
 }
 
 .primary-nav {
+    position: absolute;
+    z-index: 4;
+    left: 5%;
+    width: 90%;
     justify-content: space-between;
-    height: 100px;
-    margin-inline: 10%;
-    border-bottom: 1px solid red;
-    margin-block-start: 2.55rem;
+    height: 120px;
+    margin-inline-end: 10%;
+    border-bottom: 1px solid white;
+    padding-block-start: 2.55rem;
     /* background-color: aquamarine; */
 }
 
 @media (max-width:1200px) {
     .primary-nav {
         margin-inline: 2%;
+        left: -1%;
+        width: 98%;
     }
 }
 
 .logo--primary-nav {
     width: max(10%, 8.125rem);
     max-height: 100%;
-    transform: scale(1.1);
     align-self: flex-start;
 }
 
@@ -176,6 +191,7 @@ select {
     justify-content: flex-end;
     align-items: center;
     width: 60%;
+    /* height: 2rem; */
     /* background-color: yellowgreen; */
 }
 
@@ -189,16 +205,14 @@ select {
 }
 
 .header--primary-nav ul li {
-    /* height: 100%; */
     display: flex;
 }
 
 .header--primary-nav ul li a {
     position: relative;
     width: 100%;
-    height: 100;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .header--primary-nav ul li a:hover,
@@ -224,6 +238,7 @@ select {
     height: 100%;
     position: relative;
     justify-content: flex-end;
+    transform: translateX(-1rem);
     padding-inline-start: 2.5rem;
     padding-inline-end: 0.3125rem;
     /* background-color: burlywood; */
@@ -236,7 +251,7 @@ select {
     height: 2.5rem;
     top: 0;
     left: 40%;
-    background-color: black;
+    background-color: white;
 }
 
 .search-class {
@@ -245,7 +260,7 @@ select {
     height: 1.875rem;
     background-color: transparent;
     border-radius: 50%;
-    box-shadow: 0 0 0 0.625rem black;
+    box-shadow: 0 0 0 0.625rem white;
     transform: scale(50%);
 }
 
@@ -257,6 +272,45 @@ select {
     bottom: -0.9375rem;
     right: -2.1875rem;
     transform: rotate(45deg);
-    background-color: black;
+    background-color: white;
 
+}
+
+/* the landing */
+.landing {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/landing.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.content--land {
+    width: 100%;
+    height: fit-content;
+    transform: translateY(16rem);
+    padding-block: 2.5rem;
+    padding-inline: 15%;
+    color: white;
+    background-color: #145E75;
+}
+
+.landing h1 {
+    margin-block-end: 2rem;
+    font-size: 2.4rem;
+}
+
+.landing p {
+    font-size: 1.4rem;
+}
+
+@media (min-width:800px) {
+    .content--land {
+        width: min(80%, 700px);
+        padding-block: 3.5rem;
+        padding-inline: 5%;
+        line-height: 1.8;
+    }
 }
