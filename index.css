@@ -73,9 +73,11 @@ select {
     }
 }
 
-/* ############### */
-/* general classes */
-/* ############### */
+/* ################################################################################################################## */
+/* ###############                                              #########
+/* general classes                                              #    #  
+/* ###############                                              #####
+/* ################################################################################################################## */
 
 .flex {
     display: flex;
@@ -94,11 +96,63 @@ select {
     border: 0;
 }
 
-/* ################### */
-/* the page classes    */
-/* ################### */
+/* ################################################################################################################## */
+/* #########                                                     ####
+/* componet                                                      #
+/* #########                                                     ####
+/* ################################################################################################################## */
 
-/* the nav */
+/* main header */
+.main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #145E75; */
+}
+
+.main-header h1 {
+    position: relative;
+    /* width: 20%; */
+    font-size: 2rem;
+    margin-block-end: 3rem;
+}
+
+.main-header h1::before {
+    z-index: 2;
+    content: "";
+    position: absolute;
+    width: 1.3rem;
+    height: 1.3rem;
+    bottom: -2rem;
+    left: calc(50% - 0.65rem);
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: white;
+}
+
+.main-header h1::after {
+    content: "";
+    position: absolute;
+    width: 6rem;
+    height: 0.125rem;
+    bottom: -1.2rem;
+    left: calc(50% - 3rem);
+    background-color: black;
+}
+
+.main-header p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777788;
+}
+
+/* ############################################################################################################################################################### */
+/* ###################                                          ####
+/* the page classes                                             ####
+/* ###################                                          #
+/* ############################################################################################################################################################### */
+
+/* the nav NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN */
 @media (max-width:50rem) {
     #primary-navigation {
         z-index: 10;
@@ -276,9 +330,12 @@ select {
 
 }
 
-/* the landing */
+/* the landing LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL */
 .landing {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100vh;
     background-image: url("https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/landing.jpg");
@@ -290,7 +347,6 @@ select {
 .content--land {
     width: 100%;
     height: fit-content;
-    transform: translateY(16rem);
     padding-block: 2.5rem;
     padding-inline: 15%;
     color: white;
@@ -299,18 +355,305 @@ select {
 
 .landing h1 {
     margin-block-end: 2rem;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
 }
 
 .landing p {
-    font-size: 1.4rem;
+    font-size: 1rem;
 }
 
-@media (min-width:800px) {
+@media (min-width:50rem) {
     .content--land {
-        width: min(80%, 700px);
-        padding-block: 3.5rem;
-        padding-inline: 5%;
+        width: min(80%, 35rem);
+        padding-block: 3rem;
+        padding-inline: 2.5%;
         line-height: 1.8;
     }
+}
+
+.three-dots {
+    position: absolute;
+    bottom: 0.625rem;
+    align-self: center;
+    display: flex;
+    gap: 1rem;
+    transform: translateY(-2rem);
+}
+
+.three-dots button {
+    cursor: pointer;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.three-dots button[aria-checked="true"] {
+    background-color: #1FACFA;
+}
+
+/* sercice SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */
+
+.service {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: lavender;
+    min-height: 100vh;
+}
+
+.service .main-header {
+    margin-block: 2rem;
+    justify-items: center;
+}
+
+.content--service {
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 2rem;
+    margin-block-end: 4rem;
+    gap: 2rem;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-block: 1rem;
+    gap: 0.5rem;
+    /* background-color: rebeccapurple; */
+}
+
+.box img {
+    max-width: 3rem;
+}
+
+.box h2 {
+    color: #1FACFA;
+    font-size: 1.43rem;
+}
+
+.box p {
+    font-size: 1.1rem;
+    color: #777788;
+}
+
+@media (min-width:50rem) {
+    .service {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+    }
+
+    .service .main-header {
+        grid-column: 2/3;
+        margin-block: 2rem;
+    }
+
+    .content--service {
+        grid-column: 2/3;
+    }
+
+    .box {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: 1fr 1fr;
+        /* background-color: rebeccapurple; */
+        /* margin-block-end: 1rem; */
+    }
+
+    .box img {
+        grid-column: 1/2;
+        transform: translateX(-2rem);
+        justify-self: end;
+    }
+
+    .box h2 {
+        justify-self: start;
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .box p {
+        justify-self: start;
+        text-align: left;
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+}
+
+@media (min-width:62.5rem) {
+    .service {
+        grid-template-columns: 1fr 6fr 1fr;
+    }
+
+    .content--service {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+/* design DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD */
+.design {
+    height: calc(50vh + 5rem);
+    /* height: fit-content; */
+    background-image: url("https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/design-features.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.design>img {
+    display: none;
+    visibility: hidden;
+}
+
+.content--design {
+    width: 100%;
+    height: min(fit-content, 100%);
+    padding-block: 2rem;
+    padding-inline: 5%;
+    transform: translateY(5%);
+    color: white;
+    background-color: #145E75;
+}
+
+
+.design h2 {
+    margin-block-end: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.design ul {
+    list-style: none;
+    padding-inline: 0;
+}
+
+.design li {
+    margin-block-end: 1rem;
+}
+
+.design img {
+    display: inline;
+    width: 1.2rem;
+    margin-inline-end: 1rem;
+    transform: translateY(.4rem);
+}
+
+@media (min-width:50rem) {
+    .design {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .design>img {
+        align-self: flex-end;
+        display: block;
+        visibility: visible;
+        min-width: 20rem;
+        min-height: 15rem;
+        transform: translate(20%, 20%);
+    }
+
+    .content--design {
+        width: 50%;
+    }
+
+    .design li {
+        margin-block-end: 2rem;
+    }
+}
+
+/* portfolio PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP*/
+.portfolio {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-block-end: 2rem;
+}
+
+.portfolio .main-header {
+    width: 100%;
+    margin-block-start: 4rem;
+    margin-block-end: 2rem;
+}
+
+#portfolio-list {
+    gap: .5rem;
+}
+
+#portfolio-list li {
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+#portfolio-list li[aria-checked="true"],
+#portfolio-list li:hover,
+#portfolio-list li:active {
+    background-color: #1FACFA;
+    color: white;
+
+}
+
+.item {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+}
+
+.item img {
+    transition: transform 200ms ease-in;
+}
+
+.item:hover img {
+    transform: rotate(-1.5deg);
+}
+
+.item::before {
+    transform: translateY(100%);
+    z-index: 1;
+    content: "Awsome Image";
+    position: absolute;
+    width: inherit;
+    padding: 2rem;
+    bottom: 0;
+    transition: transform 200ms ease-in;
+    background-color: white;
+}
+
+.item:hover::before {
+    transform: translateY(0);
+}
+
+@media (min-width:50rem) {
+    .content--portfolio {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width:75rem) {
+    .content--portfolio {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+.portfolio button {
+    padding-block: 1rem;
+    padding-inline: 1.5rem;
+    border-radius: 1px;
+    border: 0;
+    color: white;
+    background-color: #1FACFA;
 }
