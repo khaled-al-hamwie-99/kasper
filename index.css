@@ -661,6 +661,7 @@ select {
 
 .video {
     position: relative;
+    margin-block-end: 2rem;
     width: 100%;
 }
 
@@ -703,4 +704,14 @@ select {
     border: 0;
     background-color: black;
     color: white;
+}
+
+/*About us AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  */
+
+.about-us {
+    width: 100%;
+}
+
+.about-us .main-header {
+    margin-block-end: 6rem;
 }
