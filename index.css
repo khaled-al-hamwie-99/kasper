@@ -146,6 +146,22 @@ select {
     color: #777788;
 }
 
+/* dark background */
+.dark {
+    position: relative;
+}
+
+.dark-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .4;
+}
+
 /* ############################################################################################################################################################### */
 /* ###################                                          ####
 /* the page classes                                             ####
@@ -710,8 +726,72 @@ select {
 
 .about-us {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 
 .about-us .main-header {
     margin-block-end: 6rem;
+}
+
+.about-us img {
+    min-width: 21.875rem;
+    transform: translate(-1rem, 4rem);
+}
+
+/* Stars SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSTTTSTSTSTSTSTSSTSSTTSTSTSTSTTSSTTS*/
+
+.stars {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    margin-block-end: 2rem;
+    padding-block: 2rem;
+    padding-inline: 5%;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/stats.png");
+}
+
+.small-box {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: .5rem;
+    padding-block: .8rem;
+    color: white;
+    background-color: #1A5B7A;
+}
+
+.small-box h2 {
+    font-size: 2.5rem;
+}
+
+.small-box img {
+    width: 2rem;
+}
+
+@media (min-width:40rem) {
+    .stars {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        padding-block-start: 2rem;
+    }
+}
+
+@media (min-width:60rem) {
+    .stars {
+        grid-template-columns: repeat(4, 1fr);
+        min-height: fit-content;
+    }
+
+    .small-box {
+        height: 200%;
+    }
 }
