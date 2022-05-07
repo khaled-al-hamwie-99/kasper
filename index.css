@@ -960,16 +960,50 @@ select {
 @media (min-width:62.5rem) {
     .our-skill {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 5%;
-        padding-inline: 2%;
+        grid-template-columns: 1fr 4fr 1fr 4fr 1fr;
     }
 
     .our-skill-testimonials {
-        gap: 3rem;
+        gap: 1.5rem;
+        grid-column: 2/3;
+    }
+
+    .testimonials-cont {
+        height: 35%;
+        gap: 1rem;
     }
 
     .our-skill-testimonials .three-dots {
         transform: translateY(1rem);
     }
+
+    .our-skill-skills {
+        grid-column: 4/5;
+    }
+}
+
+/* quote QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQq */
+.qoute {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 50vh;
+    margin-block-end: 2rem;
+    background-image: url("https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/quote.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.content--qoute {
+    z-index: 3;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.content--qoute span {
+    font-size: 1.2rem;
 }
