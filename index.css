@@ -1148,3 +1148,63 @@ select {
         gap: 2rem;
     }
 }
+
+
+/* subscribe SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs */
+
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30rem;
+    margin-block-end: 4rem;
+    background-image: url("https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/subscribe.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.subscribe form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-block-end: 2rem;
+}
+
+.subscribe form [type="email"] {
+    width: 60%;
+    padding: 1rem;
+    border: 1px solid white;
+    outline: 0;
+    font-size: 1.3rem;
+    color: white;
+    background-color: transparent;
+}
+
+.subscribe [type="submit"] {
+    padding: 1rem;
+    border: 1px solid white;
+    transform: translateX(-.5rem);
+    font-size: 1.3rem;
+    color: white;
+    background-color: #1FACFA;
+}
+
+::placeholder {
+    color: white;
+}
+
+.subscribe p {
+    font-size: 1.3rem;
+    color: white;
+}
+
+@media (min-width:60rem) {
+    .subscribe {
+        flex-direction: row;
+    }
+}
+
+/* contact CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC */
