@@ -173,7 +173,7 @@ select {
 @media (max-width:50rem) {
     #primary-navigation {
         z-index: 10;
-        position: absolute;
+        position: fixed;
         display: none;
         overflow: hidden;
         flex-direction: column;
@@ -182,9 +182,9 @@ select {
         top: -20px;
         right: 0;
         height: 110vh;
-        width: 60%;
+        width: 50%;
         border-radius: 2px;
-        background-color: black;
+        background-color: #145E75;
         transform: translateX(100%);
         transition: transform 600ms ease-in-out 0.1ms;
     }
@@ -212,7 +212,7 @@ select {
 
     .mobile-nav-toggle[aria-checked="true"] {
         z-index: 11;
-        position: absolute;
+        position: fixed;
         top: 20px;
         right: 20px;
         width: 1.875rem;
@@ -354,7 +354,7 @@ select {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    height: 40rem;
     background-image: url("https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/landing.jpg");
     background-position: center;
     background-size: cover;
@@ -516,7 +516,7 @@ select {
 
 /* design DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD */
 .design {
-    height: calc(50vh + 5rem);
+    height: 30rem;
     /* height: fit-content; */
     background-image: url("https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/design-features.jpg");
     background-size: cover;
@@ -1153,6 +1153,7 @@ select {
 /* subscribe SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs */
 
 .subscribe {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1164,6 +1165,10 @@ select {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.subscribe>* {
+    z-index: 2;
 }
 
 .subscribe form {
