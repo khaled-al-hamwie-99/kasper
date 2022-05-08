@@ -1192,7 +1192,7 @@ select {
     background-color: #1FACFA;
 }
 
-::placeholder {
+.subscribe ::placeholder {
     color: white;
 }
 
@@ -1208,3 +1208,173 @@ select {
 }
 
 /* contact CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC */
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding-inline: 5%;
+    margin-block-end: 4rem;
+}
+
+.content--contact-us {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.bc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+.c {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    gap: .5rem;
+    text-align: center;
+}
+
+.bc p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-block-end: 1rem;
+}
+
+.bc span {
+    color: #777788;
+}
+
+.contact-us form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.contact-us [type="text"],
+.contact-us [type="email"] {
+    width: 100%;
+    padding: .5rem;
+    outline: 0;
+    border: 1px solid #777788;
+}
+
+.contact-us textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 6rem;
+    max-height: 6rem;
+    overflow-y: scroll;
+    padding: .5rem;
+    outline: 0;
+    border: 1px solid #777788;
+}
+
+.contact-us [type="submit"] {
+    align-self: flex-end;
+    padding: 1rem;
+    border: 1px solid white;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #1FACFA;
+}
+
+@media (min-width:50rem) {
+    .contact-us {
+        padding-inline: 10%;
+    }
+
+    .content--contact-us {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 5%;
+    }
+
+    .bc {
+        width: 35%;
+    }
+
+    .c {
+        gap: 1rem;
+    }
+
+    .contact-us form {
+        width: 65%;
+        gap: 1.5rem;
+    }
+
+    .contact-us textarea {
+        min-height: 12rem;
+        max-height: 12rem;
+    }
+}
+
+/* footer */
+footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    height: 30rem;
+    background-image: url("https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/subscribe.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+footer>* {
+    z-index: 2;
+}
+
+
+footer p:not(:last-child) {
+    position: relative;
+    margin-block-end: 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+footer p:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: .09rem;
+    bottom: -.6rem;
+    left: 0;
+    background-color: white;
+}
+
+footer> :last-child {
+    position: absolute;
+    bottom: 2rem;
+    margin-block-end: 0;
+    font-size: 1.2rem;
+    color: white;
+}
+
+footer> :last-child span {
+    color: #1FACFA;
+    font-weight: bold;
+}
+
+footer .socials-media {
+    display: flex;
+    gap: .5rem;
+}
+
+.socials-media img {
+    display: inline;
+    width: 2.4rem;
+}
